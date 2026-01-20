@@ -2,8 +2,10 @@ import random
 
 # function to be used by game_1: Guess the Number
 def pick_value(poss_values):
-    x = random.choice(poss_values)   
-    return x
+    # Binary search is put into place where the number of searches is minimised the most
+    # Middle index is taken then returned as the computer's guess
+    middle = len(poss_values) // 2
+    return poss_values[middle]
 
 # function to be used in game_2: Higher or Lower
 def check_higher_lower(current_val, next_val, user_input):
