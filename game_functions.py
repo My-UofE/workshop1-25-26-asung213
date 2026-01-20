@@ -21,4 +21,16 @@ def check_higher_lower(current_val, next_val, user_input):
 
 # function to be used in game_3: Hangman
 def process_guess(letter, board, word):
-    pass
+    guess = False
+    # Loops through each letter in word and compare it to the letter guessed 
+    # If true then guess is changed to True
+    for i in range(len(word)):
+        if word[i] == letter:
+            board[i] = letter 
+            guess = True
+    # The user is then told if their guess was successful or not and guess is returned
+    if guess == True:
+        print("Well done! " + letter + " is in the word")
+    else:
+        print("Sorry, " + letter + " is not in the word")
+    return guess
